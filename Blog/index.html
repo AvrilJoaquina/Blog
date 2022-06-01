@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April Loves Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header >
+        <div>
+            <h1>April Loves Books</h1>
+            <h2>This is the blog of a girl who loves to read books but could not think of a better name for her page</h2>
+        </div>
+        <nav class="container">
+            <div class="item"><a href="index.html">HOME</a> </div>
+            <div class="item"><a href="recommendations.html">RECOMMENDATIONS and REVIEWS</a> </div>
+            <div class="item"><a href="aboutme.html">ABOUT ME</a></div>
+        </nav>
+    </header>
+    <main>
+        <H3>DESAFÍO LECTOR 2022</H3>
+        <p>Este año me propuse leer 20 libros, y aunque tuve un muy buen verano, arrancó marzo y con el todas las responsabilidades y el estrés, así que mi indice de lectura cayó en picada. Espero poder volver a ponerme al día pronto y salir del bloqueo lector en el que estoy. Wish me luck!</p>
+        <div class="desafio2"></div>
+        <div class="desafio">6/20</div>
+        <h3>Me encantaría saber más de vos</h3>
+        <p>Si queres y tenes tiempo, completa este formulario para que pueda seguir mejorando.</p>
+        <form action="#" name="formulario" method="get">
+            <div class="f">
+                <label for="nombre"> Nombre </label><input type="text" name="nombre" id="nombre">
+            </div>
+            <div class="f">
+                <label for="genero"> Genero </label>
+                <select name="genero">
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                    <option>No Binario</option>
+                </select>
+            </div>
+            <div class="f">
+                <label for="pais"> País de residencia </label><input type="text" name="pais"id="pais">
+            </div>
+            <div class="f">
+                <label for="generol"> Generos preferidos </label>
+            </div>
+            <div class="check" name="generos" id="generos">
+                <input type="checkbox" name="option" value="1"> Ciencia Ficción <br>
+                <input type="checkbox" name="option" value="2"> Fantasía<br>
+                <input type="checkbox" name="option" value="3"> Policial<br>
+                <input type="checkbox" name="option" value="4"> Romance<br>
+                <input type="checkbox" name="option" value="5"> Young-Adult<br>
+                <input type="checkbox" name="option" value="6"> Clásico<br>
+                <input type="checkbox" name="option" value="7"> No Ficción <br>
+                <input type="checkbox" name="option" value="8"> Contemporaneo<br>
+            </div>
+            <div class="f">
+                <label for="red"> Red social más utilizada</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="option1" id="ins" value="Ins"> Instragram
+                <input type="radio" name="option2" id="tik" value="Tik"> TikTok
+                <input type="radio" name="option3" id="yt" value="YT"> YouTube
+            </div>
+            <div class="f">
+                <label for="comentario"> Comentarios</label>
+            </div>
+            <div class="f">
+                <textarea name="comentario" rows="12" cols="30">Deja tu comentario!</textarea>
+            </div>
+            <br>
+            <input type="submit"  id="btn" name="btn" value="Enviar">
+        </form>
+    </main>
+    <script>
+        (function() {
+            var formulario = document.getElementsByName('formulario') [0],
+            elementos = formulario.elements,
+            boton = document.getElementById('btn');
+
+            var validarNombre = function (e) {
+                if (formulario.nombre.value == 0) {
+                    alert ("Completa el campo nombre"); 
+                    e.preventDefault();
+                }
+            };
+            var validarRadio = function (e) {
+                if (formulario.option1.checked == true ||
+                    formulario.option2.checked == true ||
+                    formulario.option3.checked == true){
+                } else {
+                    alert ("Elige una red social");
+                    e.preventDefault();
+                }
+            };
+
+            var validar = function(e) {
+                validarNombre(e);
+                validarRadio(e);
+            };
+
+            formulario.addEventListener("submit", validar);
+        }())
+    </script>
+     
+</body>
+</html>
